@@ -80,8 +80,9 @@ class Library {
 
     findBookBy(type, value) {
         for (let book of this.books) {
-            let findingResult = (book[type] == value) ? book : null;
-            return findingResult;
+            if (book[type] == value) {
+                return book;
+            } else return null;
         }
     }
 
